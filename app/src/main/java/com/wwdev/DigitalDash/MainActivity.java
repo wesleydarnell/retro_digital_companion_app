@@ -1,4 +1,4 @@
-package com.android.wf_companion_app;
+package com.wwdev.DigitalDash;
 
 import android.content.Intent;
 import android.content.ActivityNotFoundException;
@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         openAppButton = findViewById(R.id.open_app_button);
         openAppButton.setOnClickListener(v -> {
-
+            Log.i("MainActivity", "Open app button clicked. App:" + getPackageName());
             showOpenAppSnackbar();
 
             Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             int id = item.getItemId();
             if (id == R.id.openDevPage) {
                 String dev_id = getString(R.string.dev_id);
-                String url = "https://play.google.com/store/apps/dev?id=" + dev_id;
+                String url = "https://play.google.com/store/apps/developer?id=" + dev_id;
                 Uri uri = Uri.parse(url);
                 Intent intentDevPage = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intentDevPage);
@@ -184,6 +186,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             Snackbar snackbar = Snackbar.make(swipeRefreshLayout, "No Wear OS devices found.", Snackbar.LENGTH_LONG);
+            snackbar.setAnchorView(swipeRefreshLayout);
+            snackbar.show();
+        });
+
+        nodeListTask.addOnFailureListener(excep -> {
+            View swipeRefreshLayout = findViewById(R.id.bottom_navigation);
+            Log.e("MainActivity", "Get Wearable node err: " + Objects.requireNonNull(excep.getMessage()));
+            Snackbar snackbar = Snackbar.make(swipeRefreshLayout, "Failed to find Wear OS Device.", Snackbar.LENGTH_LONG);
             snackbar.setAnchorView(swipeRefreshLayout);
             snackbar.show();
         });
