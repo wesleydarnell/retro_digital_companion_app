@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.android.wf_companion_app"
+    namespace = "com.wwdev.DigitalDash"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.android.wf_companion_app"
+        applicationId = "com.wwdev.DigitalDash"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

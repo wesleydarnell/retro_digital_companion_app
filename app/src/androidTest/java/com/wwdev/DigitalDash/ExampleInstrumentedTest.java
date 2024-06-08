@@ -1,4 +1,4 @@
-package com.android.wf_companion_app;
+package com.wwdev.DigitalDash;
 
 import android.content.Context;
 
