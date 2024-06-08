@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "wf_companion_app"
+rootProject.name = "DigitalDash Companion App"
 include(":app")
  
