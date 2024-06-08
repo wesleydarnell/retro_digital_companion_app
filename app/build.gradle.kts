@@ -1,8 +1,27 @@
+import java.util.Properties
+
+val localProperties = Properties().apply {
+    load(File(rootDir, "local.properties").reader())
+}
+
+val keystorePath: String  = localProperties.getProperty("keystore")
+val storepassword: String = localProperties.getProperty("storepassword")
+val keyalias: String = localProperties.getProperty("keyalias")
+val keypassword: String = localProperties.getProperty("keypassword")
+
 plugins {
     alias(libs.plugins.androidApplication)
 }
 
 android {
+    signingConfigs {
+        create("wwdev") {
+            storeFile = file(keystorePath)
+            storePassword = storepassword
+            keyAlias = keyalias
+            keyPassword = keypassword
+        }
+    }
     namespace = "com.wwdev.DigitalDash"
     compileSdk = 34
 
