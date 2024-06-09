@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             int id = item.getItemId();
             if (id == R.id.openDevPage) {
                 String dev_id = getString(R.string.dev_id);
-                String url = "https://play.google.com/store/apps/developer?id=" + dev_id;
+                String url = "https://play.google.com/store/apps/dev?id=" + dev_id;
                 Uri uri = Uri.parse(url);
                 Intent intentDevPage = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intentDevPage);
