@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">RETRO DIGITAL WATCH FACE</string>
-    <string name="dev_id">WWDEV</string>
+    <string name="dev_id">5589246141633312796</string>
     <string name="policy_url">https://www.wesleydarnell.dev/privacypolicy.pdf</string>
     <string name="text1">  This watch face companion app is designed to help you install the watchface to your wearable device.</string>
     <string name="status_on"> Wear OS device connected.\nClick the button bellow and continue on the watch.</string>
