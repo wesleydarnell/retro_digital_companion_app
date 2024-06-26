@@ -29,8 +29,8 @@ android {
         applicationId = "com.wwdev.DigitalDash"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1001
-        versionName = "1.0"
+        versionCode = 10000023
+        versionName = "1.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

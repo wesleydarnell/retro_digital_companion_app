@@ -26,12 +26,23 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="50dp"
                     android:gravity="center"
                     android:text="@string/app_name"
                     android:textAlignment="center"
                     android:textSize="22sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/version"
+                    android:textSize="16sp" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_view_img"
@@ -39,16 +50,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
                     app:cardCornerRadius="16dp">
 
                     <ImageView
                         android:id="@+id/image_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:contentDescription="@string/imgdesc"
                         android:scaleType="centerInside"
                         android:src="@drawable/wf_img" />
 
                 </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/open_app_button"
+                    style="@style/Widget.Material3.Button.IconButton.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="24dp"
+                    android:elevation="6dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@string/CTA"
+                    android:textSize="18sp"
+                    app:icon="@drawable/watch_on"
+                    app:iconPadding="8dp"
+                    app:iconSize="24dp" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_view"
@@ -91,22 +120,6 @@
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/open_app_button"
-                    style="@style/Widget.Material3.Button.IconButton.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="56dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="24dp"
-                    android:elevation="6dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:text="@string/CTA"
-                    android:textSize="18sp"
-                    app:icon="@drawable/watch_on"
-                    app:iconPadding="8dp"
-                    app:iconSize="24dp" />
 
             </LinearLayout>
         </ScrollView>
